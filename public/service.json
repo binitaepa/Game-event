@@ -1,0 +1,75 @@
+[
+    {
+      "id": "1",
+      "event_name": "Tech Innovate Summit",
+      "event_type": "Tech Conference",
+      "event_description": "Explore the latest innovations in technology at the Tech Innovate Summit. Join us for insightful talks and networking opportunities.",
+      "event_date": "2023-10-20",
+      "event_location": "Tech Hub Convention Center",
+      "city": "Techville",
+      "state": "Techland",
+      "ticket_price": 50.00,
+      "image_url": "https://i.ibb.co/q0P8r74/Tech-Inovative-service.jpg"
+    },
+    {
+      "id": "2",
+      "event_name": "GameQuest Expo",
+      "event_type": "Gaming Convention",
+      "event_description": "Embark on a quest through the world of gaming at GameQuest Expo. Experience the latest games and meet fellow gamers.",
+      "event_date": "2023-11-15",
+      "event_location": "Gamer's Paradise Convention Center",
+      "city": "Gameville",
+      "state": "Gamerland",
+      "ticket_price": 35.00,
+      "image_url": "https://i.ibb.co/DQ84VNH/two-asian-guys-compete-speed-rider-arcade-game-racing-simulator-machine.jpg"
+    },
+    {
+      "id": "3",
+      "event_name": "PlayFusion Expo",
+      "event_type": "Gaming Convention",
+      "event_description": "Dive into the fusion of gaming worlds at PlayFusion Expo. Discover new gaming experiences and compete in tournaments.",
+      "event_date": "2024-02-05",
+      "event_location": "Fusion Gaming Arena",
+      "city": "Playville",
+      "state": "Gamerland",
+      "ticket_price": 40.00,
+      "image_url": "https://i.ibb.co/sv1qfqG/9367628.jpg"
+    },
+    {
+      "id": "4",
+      "event_name": "AI Hack Fusion",
+      "event_type": "Hackathon",
+      "event_description": "Unleash your creativity and skills at the AI Hack Fusion. Build innovative AI solutions and win prizes.",
+      "event_date": "2023-09-28",
+      "event_location": "InnovateTech Hub",
+      "city": "Techville",
+      "state": "Techland",
+      "ticket_price": 20.00,
+      "image_url": "https://i.ibb.co/wQHBwRQ/2942.jpg"
+    },
+    {
+      "id": "5",
+      "event_name": "HealthTech Hack Revolution",
+      "event_type": "Hackathon",
+      "event_description": "Revolutionize healthcare through technology at the HealthTech Hack Revolution. Solve real-world health challenges.",
+      "event_date": "2024-04-10",
+      "event_location": "MedTech Innovation Center",
+      "city": "Healthville",
+      "state": "Medland",
+      "ticket_price": 25.00,
+      "image_url": "https://i.ibb.co/SVhmgHh/rpa-concept-with-blurry-hand-touching-screen.jpg"
+    },
+    {
+      "id": "6",
+      "event_name": "Gamers United Convention",
+      "event_type": "Gaming Convention",
+      "event_description": "Unite with fellow gamers at the Gamers United Convention. Enjoy gaming, cosplay, and meet gaming industry professionals.",
+      "event_date": "2023-12-01",
+      "event_location": "Unity Gaming Center",
+      "city": "Gameville",
+      "state": "Gamerland",
+      "ticket_price": 30.00,
+      "image_url": "https://i.ibb.co/85pBK1z/signal-5165949-640.jpg"
+    }
+  ]
+  
