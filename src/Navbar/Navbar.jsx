@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
+import profilePic from '../assets/user.png'
 
 
 const Navbar = () => {
@@ -16,6 +17,11 @@ const Navbar = () => {
           <li ><NavLink className='hover:text-red-500' to='/'>Home</NavLink></li>
              <li><NavLink className='hover:text-red-500' to='/about'>About</NavLink></li>
              <li><NavLink className='hover:text-red-500' to='/news'>News</NavLink></li>
+             {user && <> 
+              <li><NavLink className='hover:text-red-500' to='/customer'>Customer Support</NavLink></li>
+             <li><NavLink className='hover:text-red-500' to='/account'>Account Setting</NavLink></li></>
+             }
+
              
     </>
     return (
@@ -33,7 +39,7 @@ const Navbar = () => {
     <a className="btn btn-ghost normal-case text-xl"><span className="text-purple-500 font-medium  border-b-2">GamenTo</span> <span className="text-amber-500 font-bold">Event</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal text-purple-500 gap-5 px-1">
+    <ul className="menu menu-horizontal ml-8 font-bold text-lg  text-purple-500 gap-5 px-1">
      {navLinks}
     </ul>
   </div>
@@ -42,7 +48,13 @@ const Navbar = () => {
   </div>
   {
                     user ?
-                        <button onClick={handleSignOut} className="btn bg-amber-500 text-white">Sign Out</button>
+                        <>
+                        <span className="mr-2 ">{user.email}</span>
+                        <button onClick={handleSignOut} className="btn bg-amber-500 text-white mr-2">Sign Out</button>
+                        <div className="w-15 rounded-full">
+          <img src={profilePic} />
+        </div>
+                        </>
                         :
                         <Link to="/login">
                             <button className="btn bg-purple-600 text-white">Login</button>

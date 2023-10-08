@@ -9,6 +9,8 @@ import PrivateRoute from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import About from "../pages/About/About";
 import News from "../pages/News/News";
+import CustomerSupport from "../pages/CustomerSupport/CustomerSupport";
+import Account from "../pages/Account/Account";
 
 const routes= createBrowserRouter([
     {
@@ -32,16 +34,24 @@ const routes= createBrowserRouter([
         },
         {
             path:'/about',
-            element:<PrivateRoute><About></About></PrivateRoute>,
+            element:<About></About>,
             loader:()=>fetch('/service.json')
 
         },
         { 
             path:'/news',
-            element:<PrivateRoute><News></News></PrivateRoute>,
+            element:<News></News>,
             loader:()=>fetch('/service.json')
 
 
+        },
+        { 
+            path:'/customer',
+            element:<PrivateRoute><CustomerSupport></CustomerSupport></PrivateRoute>
+    },
+        {
+            path:'/account',
+            element:<PrivateRoute><Account></Account></PrivateRoute>
         },
         {
             path:'/login',

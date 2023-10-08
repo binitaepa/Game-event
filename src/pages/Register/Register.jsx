@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Register = () => {
-    const {createUser}=useContext(AuthContext)
+    const {createUser,signInWithGoogle}=useContext(AuthContext)
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const handleRegister=e=>{
@@ -39,12 +40,26 @@ const Register = () => {
       .catch(error=>{
         console.error(error)
       })
-
     }
+    const handleGoogle= () =>{
+        signInWithGoogle()
+        .then(result=>{console.log(result)})
+        .catch(error=>{console.error(error)})
+    }
+    
     return (
         <div>
+            
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col ">
+  <div className='p-4 space-y-3 mb-6'>
+            <h2 className="text-3xl">Login With</h2>
+                <button onClick={handleGoogle} className="btn btn-outline w-full bg-amber-500">
+                    <FaGoogle></FaGoogle>
+                    Google
+                </button>
+                <h2 className="text-3xl items-center flex justify-center">OR</h2>
+            </div>
   <h2 className="text-3xl">Please Register</h2>
    
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-purple-200">
