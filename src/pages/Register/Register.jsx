@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 
 const Register = () => {
     const {createUser}=useContext(AuthContext)
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
     const handleRegister=e=>{
         e.preventDefault();
         const form =new FormData(e.currentTarget);
@@ -12,8 +14,25 @@ const Register = () => {
         const email=form.get('email')
         const password=form.get('password')
         console.log(name,email,password)
+
+        setRegisterError('');
+        setSuccess('');
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Your password should have at least one upper case characters.')
+            return;
+        }
+        else if(!/[!@#$%^&*()_+{}[:;<>,.?~\\/-]/.test(password)){
+            setRegisterError('Your password should have a special character.')
+            return;
+        }
+
         createUser(email,password)
-      .then(result=>{console.log(result)})
+      .then(result=>{console.log(result);
+        setSuccess('User Created Successfully.')})
       .catch(error=>{
         console.error(error)
       })
@@ -52,6 +71,12 @@ const Register = () => {
           <button className="btn btn-primary">Register</button>
         </div>
       </form>
+      {
+                    registerError && <p className="text-red-700">{registerError}</p>
+                }
+                {
+                    success && <p className="text-green-600 ml-10">{success}</p>
+                }
       <p className="text-center text-sm mb-4">Already have an account ?<Link className="text-red-600 font-bold" to='/login'>Login</Link></p>
     </div>
   </div>

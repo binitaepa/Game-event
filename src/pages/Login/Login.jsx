@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 
@@ -8,6 +8,8 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 const Login = () => {
     const {signIn}=useContext(AuthContext)
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
 const location=useLocation();
 const navigate=useNavigate();
     const handleLogin=(e)=>{
@@ -17,11 +19,24 @@ const navigate=useNavigate();
       const email= form.get('email');
       const password=form.get('password');
       console.log(email,password)
+      setRegisterError('');
+      setSuccess('');
+
     signIn(email,password)
     .then(result=>{console.log(result);
         navigate(location?.state? location.state:'/');
+        if(result){
+            setSuccess('User Logged in Successfully.')
+        }
+        else{
+            setSuccess('Please verify your email address.')
+        }
     })
-    .catch(error=>console.error(error))
+    .catch(error=>{
+        console.error(error)
+    setRegisterError(error.message);
+}
+)
     }
     return (
         <div>
@@ -51,6 +66,13 @@ const navigate=useNavigate();
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      {
+                            registerError && <p className="text-red-700">{registerError}</p>
+                        }
+                        {
+                            success && <p className="text-green-600">{success}</p>
+                        }
+
       <p className="text-center text-sm mb-4">Do not have an account ?<Link className="text-red-600 font-bold" to='/register'>Register</Link></p>
     </div>
   </div>
