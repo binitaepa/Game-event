@@ -66,7 +66,7 @@ console.log(food);
 - C: `['🍝', '🍕', '🍫', '🥑', '🍔']`
 - D: `ReferenceError`
 
-<details><summary><b>:A</b></summary>
+<details><summary><b>Answer:A</b></summary>
 <p>
 
 #### Answer: ?

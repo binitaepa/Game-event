@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Services = ({service}) => {
@@ -14,7 +15,7 @@ const Services = ({service}) => {
     <p>Type: {event_type}</p>
     <p>Price: {ticket_price}$</p>
     <div className="card-actions">
-      <button className="btn btn-primary bg-purple-500">Details</button>
+      <Link  to={`/details/${id}`}><button className="btn btn-primary bg-purple-500">Details</button></Link>
     </div>
   </div>
 </div>

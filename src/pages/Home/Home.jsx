@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 const Home = () => {
     const service=useLoaderData();
     useEffect(() => {
-        Aos.init({duration:2000}); // Initialize AOS when the component mounts
+        Aos.init({duration:1000}); // Initialize AOS when the component mounts
       }, []);
     return (
         <div >
